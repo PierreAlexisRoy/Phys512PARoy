@@ -30,8 +30,7 @@ def simpson_half(f, a, b, fa, fb):
 #This is the adaptative simpson rule. In which we will iteratively split 
 # our interval in two to get better precision. 
 def adapt_simpson(f, a, b, fa, fb, tol, last, m, fm, nmax, calls=0):
-    # f is function, (a,b) is the interval on which we integrate
-    # fa and fb are f evaluated at a and b. 
+    # Here we add a few new variables:
     # tol is the error we accept, last is the last result from
     # simpson's rule, m and fm are the previously returned midpoints
     # and function evaluation at that point, nmax is the max number of iteration 
@@ -54,9 +53,7 @@ def adapt_simpson(f, a, b, fa, fb, tol, last, m, fm, nmax, calls=0):
 
 # This is where the integral is computed, calling the previously defined
 # functions. 
-def adapt_num_integral(f, a, b, tol, nmax):
-    # f is the function, (a,b) is the interval, tol is the error acceptance
-    # and nmax is the max number of iterations allowed. 
+def adapt_num_integral(f, a, b, tol, nmax): 
     fa=f(a)
     fb=f(b)
     integ, m, fm=simpson_half(f,a,b,fa,fb)
@@ -102,5 +99,8 @@ print('The result is', result[0],'achieved in', result[1], 'function calls')
 
 print('')
 print('')
-print('In all cases, we usually need 1/3 the steps needed with the lazy way')
-print('from class since we do not repeat middle function evaluations')
+print('How does our integrator compare to the lazy one from class?')
+print('')
+print('In all cases, the lazy integrator from class would need 2.5 times as much ')
+print('steps in order to converge since for each 2 function calls we use here, ')
+print('the class algorithm would use 5 function calls.')

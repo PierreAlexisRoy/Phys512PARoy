@@ -28,7 +28,7 @@ def E_func(R,z,u):
 # we integrate using our adaptative simpson's rule
 def E_myInteg(a,b,tol,nmax):
 	R=0.5 #radius
-	z=np.linspace(0, 1, 1000) #range for z
+	z=np.linspace(0, 1, 1001) #range for z
 	E=[] #create empty list for our field
 
 	for i in z:
@@ -49,7 +49,7 @@ def E_myInteg(a,b,tol,nmax):
 # we now use scipy quad
 def E_quad(a,b):
 	R=0.5 #radius
-	z=np.linspace(0, 1, 1000) #range for z
+	z=np.linspace(0, 1, 1001) #range for z
 	E=[]
 
 	for i in z:
@@ -61,7 +61,7 @@ def E_quad(a,b):
 
 
 # we plot the results together
-zrange=np.linspace(0,1,1000) #our x axis
+zrange=np.linspace(0,1,1001) #our x axis
 Result_quad=E_quad(-1,1) #the Scipy result
 My_result=E_myInteg(-1,1,1e-8, 2000) # My integrator result
 
@@ -74,3 +74,6 @@ plt.title('E field results comparison')
 plt.legend()
 plt.savefig('Efields.pdf')
 plt.close()
+
+# We indeed get a RunTime warning from the zero division but
+# the try/except makes it so the code still runs!

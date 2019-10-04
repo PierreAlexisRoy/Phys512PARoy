@@ -57,6 +57,7 @@ X0=np.log(flare)*f+X0
 print('')
 print('We find our guessed X0 by finding the position of the flare and')
 print('making it into the exponential scale with both previous parameters')
+print('It yields X0 around 1706 as expected.')
 print('')
 
 

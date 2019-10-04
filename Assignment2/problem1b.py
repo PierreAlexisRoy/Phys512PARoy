@@ -13,10 +13,12 @@ from matplotlib import pyplot as plt
 # We can realize that the routine in the first part of Q1 was already working
 # since the x rescaling was general. I took the same code as for my problem1.py
 # but changed the x range and the plot title. This does the trick just well. 
+# When taking smaller lower boundaries or wider range, it takes a higher 
+#order polynomial to get a good result so one can set order to a higher value. 
 
-# we first want to fit this log2 from 0.5 to 1
-a=2 
-b=3
+# we choose the boundaries
+a=1e-5
+b=1e-3
 # Define x and y, the function we fit
 x=np.linspace(a, b, 1000)
 y=np.log2(x)
@@ -28,8 +30,8 @@ xx=xx/xx.max()
 xx=xx*2-1
 
 # We define some general variables we will use in our fit
-tol=1e-6 # The error we accept
-order=30 # order of the polynomials
+tol=1e-6 # The error we accept, and coeffs we will truncate
+order=100 # order of the polynomials
 n=len(xx) 
 
 # We now define the chebyshev polynomials and store them in A
@@ -69,4 +71,7 @@ plt.legend()
 plt.savefig('Cheb_fit_Q1b.pdf')
 plt.close()
 
+print('This Chebyshev model used a', p_max, 'th order Chebyshev fit.')
+print('If this order is the same as the initial order input :', order+1)
+print('then increase this order parameter to get the desired accuracy.')
 print('By looking at the plot, we see that it does work!')

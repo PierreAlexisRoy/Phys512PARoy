@@ -69,3 +69,38 @@ Amplitude           = 2.1951137947228067e-09  +/-  2.030886658702648e-10
 Tilt                = 0.9821771928755696  +/-  0.019127082783711107
 
 ------------------------problem 4------------------------------------------------------------------------
+
+Note that I used the same scaling factor of 0.5 as in problem 3
+Hence, the acceptance rate is a little bit lower but we still reached our minimum
+and in all honesty, it made the run a little faster. 
+
+We see the chi squared has stabilized, it is a sign of convergence. We plot the chains.
+We also see it takes roughly 500 steps for chi square to get down so we let these steps be our burn-in
+
+We see the chains seem pretty converged since when they wonder around values
+without showing constant growth or decay! 
+
+We see from the Fourier plot that the chains are really stable.
+
+The best fit parameters are: 
+H0                  = 68.7677301134878  +/-  2.5534870418911746
+Density baryonic    = 0.022253077773894542  +/-  0.0006520719232655398
+Density dark matter = 0.11475072085102422  +/-  0.005310302759176828
+Tau                 = 0.05337531702464483  +/-  0.0122799811112994
+Amplitude           = 2.0615407370677852e-09  +/-  6.472691381500104e-11
+Tilt                = 0.966742202788044  +/-  0.01670707703547802
+
+The results from weighted sampling the chains from problem 3 with the Planck
+Tau prior given we find : 
+H0                  = 70.78126215904614  +/-  3.5135848088101387
+Density baryonic    = 0.022785708696023498  +/-  0.0007160089130517251
+Density dark matter = 0.11164657019675953  +/-  0.00705362799467207
+Tau                 = 0.08299823390998605  +/-  0.04995865389779758
+Amplitude           = 2.1791534567448036e-09  +/-  2.0400218792122313e-10
+Tilt                = 0.980664488190905  +/-  0.01895883525404032
+
+We see that indeed, we get recognizable answers for the best fit parameters
+We see the parameters agree within error. 
+Although we see that tau is a little higher since it was not constrained in our
+MCMC in problem3 and it spent a lot of time higher than 0.1, that is why we
+get a tau which is a little higher than expected.

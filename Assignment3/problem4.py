@@ -40,7 +40,7 @@ data = wmap[:,1]
 # we define the noise
 noise = wmap[:,2]
 # define number of step max
-nstep = 100
+nstep = 2500
 # we define our initial guess -- the same as wmap_example except for H0 higher 
 # since I found that there is some kind of local min around 63 and don't want 
 # my chains to take forever in order to get out of it. 
@@ -52,7 +52,7 @@ npar=len(pars)
 # we create array to store chains
 chains=np.zeros([nstep,npar])
 chisq=np.sum( (data-get_spectrum(pars)[2:len(data)+2])**2/noise**2)
-scale_fac=0.25
+scale_fac=0.5
 chisqvec=np.zeros(nstep)
 accept = 0 # used to study the acceptance rate
 for i in range(nstep):

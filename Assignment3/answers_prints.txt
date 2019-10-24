@@ -1,0 +1,71 @@
+Pierre-Alexis Roy 
+260775494
+Phys 512 Problem Set 3
+
+I will copy/paste the print statements from my python files in this file
+
+-------------------------problem 1------------------------------------------------------------
+
+The Chi squared for this model is 1588.2376409487365
+This is close to 1588, as expected!
+
+
+------------------------problem 2---------------------------------------------------------------
+
+Fit the data for Tau fixed
+
+Newton_LM loop 0
+chi2 is 1588.3060404279495
+We keep chi2 =  1588.3060404279495
+
+Newton_LM loop 1
+chi2 is 1234.804553569934
+We keep chi2 =  1234.804553569934
+
+Newton_LM loop 2
+chi2 is 1227.931900752851
+We keep chi2 =  1227.931900752851
+
+Newton_LM loop 3
+chi2 is 1227.9308258122737
+We are converged and Chi squared is 1227.9308258122737
+
+The fit parameters are :
+
+H0                  = 69.33153965191966  +/-  2.3989839188018505
+Density baryonic    = 0.022491109479096046  +/-  0.0005392194958369115
+Density dark matter = 0.1138989194560414  +/-  0.0052262557249039285
+Amplitude           = 2.042362237821475e-09  +/-  3.896661719007193e-11
+Tilt                = 0.9697590567207159  +/-  0.013584279297768547
+
+----------- Do we trust our gradient ? -------------------
+
+We see that the Chi square is decreasing in Newton algorithm
+This is a sign that the gradient estimate we do is good, otherwise
+we would not see a persistent chi square decrease.
+
+----------- If we were to float Tau ---------------------
+We see the error on tau in the full covariance matrix is huge compared to tau
+tau = 0.05  +/-  0.1493887596435688
+So we must have that Tau is not really correlated to the other parameters
+Hence, floating tau would not affect our errors much.
+
+
+------------------------problem 3----------------------------------------------------------------------
+We see the chi squared has stabilized, it is a sign of convergence. We plot the chains.
+We also see it takes roughly 200 steps for chi square to get down so we let these steps be our burn-in
+
+We see the chains seem pretty converged since when they wonder around values
+without showing constant growth or decay!
+
+We see from the Fourier plot that the chains are really stable.
+
+The best fit parameters are: 
+H0                  = 70.89516445354842  +/-  3.631058140715436
+Density baryonic    = 0.022866605527968667  +/-  0.0006641795343842448
+Density dark matter = 0.11171387511006513  +/-  0.0071051427098221005
+Tau                 = 0.08615383595203581  +/-  0.050212470977126084
+Amplitude           = 2.1951137947228067e-09  +/-  2.030886658702648e-10
+Tilt                = 0.9821771928755696  +/-  0.019127082783711107
+
+------------------------problem 4------------------------------------------------------------------------

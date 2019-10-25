@@ -26,16 +26,7 @@ def ChiSquared(model, data, noise):
 # In order to be able to compute chi squared, we need to get the model 
 # points at the same place as the data
 
-# # we create an index list
-# ind = np.arange(0, len(cmb), 1)
-# f = interp1d(ind, cmb)
-# # so f will take our camb model and find the corresponding model point
-# # for each data point 
 
-# # We define what we need to compute chi squared
-# model = f(wmap[:,0])
-# data = wmap[:,1]
-# noise = wmap[:,2]
 
 
 # we ensure the cmb model is taken at all the same points as the data

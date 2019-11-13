@@ -1,0 +1,93 @@
+Pierre-Alexis Roy 
+260775494
+
+This file holds my results and main explanations/answers to the different
+parts of this problem set. 
+
+------------------ a) -----------------------------------------------------------------------
+For the noise model, we assume stationnary Gaussian noise. This means we assume 
+the noise is not a function of time. We pass a window to the strains using a cosine 
+just as we did in class. We also apply a gaussian filer for smoothing the data once 
+we have the power spectrum in the real fourier space. The plots are in Noise_models.pdf.
+
+------------------ b) --------------------------------------------------------------------
+In this part, we apply a matched filter which is done in wave_finder.py 
+and which is applied on the whitened data and templates. The function whitening 
+the datasets is defined in noise.py. The plots are shown in matched_filters.pdf.
+
+----------------------c)-------------------------------------------------------------
+In this part we compute the signal-to-noise ratio for each detector 
+and for the combined signal. The SNRs are computed in wave_finder.py/SNR()
+and the plotting function is in the same file. The plots are in SNRs.pdf.
+
+----------------------d)-----------------------------------------------------------------------
+In this part we compute the ANALYTIC signal-to-noise ratio for each detector 
+and both combined. We do this by getting this SNR out of our noise model. We  
+store the plots in Analytic_SNRS.pdf. We can see that the peaks are at the same
+times. We see the Analytic SNRs are usually higher than the SNRs previously calculated 
+This can be due to the fact that in some chunks in the data, maybe the noise was not 
+exactly stationnary.
+
+--------------------------e)--------------------------------------------------------
+In this part, for each event, we compute the frequency at which the weigth 
+comes equally from before than from after. Here are the results : 
+
+Event : GW120914
+For Hanford, the mid frequency is 100.25 Hz
+For Livingston, the mid frequency is 115.34375 Hz
+
+Event : LVT151012
+For Hanford, the mid frequency is 75.8125 Hz
+For Livingston, the mid frequency is 94.21875 Hz
+
+Event : GW151226
+For Hanford, the mid frequency is 74.15625 Hz
+For Livingston, the mid frequency is 107.0625 Hz
+
+Event : GW170104
+For Hanford, the mid frequency is 93.71875 Hz
+For Livingston, the mid frequency is 76.25 Hz
+
+
+---------------------------f)-------------------------------------------------------
+
+Here, we will compute the estimated time of arrival at each detector
+and assuming they are 3000 Km apart, we will estimate the uncertainty 
+in the position using the difference in the arrival time for both detectors 
+since we know grav. waves travel at speed c. Here are the results : 
+
+Event : GW120914
+The waves arrive at Hanford 15.999691982478165 +/- 0.0007152686937428272 seconds
+after the beginning of the event
+The waves arrive at Livingston 16.000481803252367 +/- 0.0005953452725819764 seconds
+after the beginning of the event.
+
+Hence, for this event, the positional uncertainty is of about 0.07898207742016439
+
+
+Event : LVT151012
+The waves arrive at Hanford 15.999358166333822 +/- 0.000565437062271458 seconds
+after the beginning of the event
+The waves arrive at Livingston 15.999552427185751 +/- 0.0007098224373903524 seconds
+after the beginning of the event.
+
+Hence, for this event, the positional uncertainty is of about 0.019426085192897347
+
+
+Event : GW151226
+The waves arrive at Hanford 16.000195311370927 +/- 0.0008952692005450672 seconds
+after the beginning of the event
+The waves arrive at Livingston 15.999631788331618 +/- 0.0008621453248189832 seconds
+after the beginning of the event.
+
+Hence, for this event, the positional uncertainty is of about 0.056352303930928827
+
+
+Event : GW170104
+The waves arrive at Hanford 15.999137390947126 +/- 0.000768959703790252 seconds
+after the beginning of the event
+The waves arrive at Livingston 15.999883426018815 +/- 0.0008655977094568002 seconds
+after the beginning of the event.
+
+Hence, for this event, the positional uncertainty is of about 0.07460350716890218
+

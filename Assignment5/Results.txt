@@ -1,0 +1,82 @@
+Pierre-Alexis Roy 
+260775494
+Phys512 - Problem Set 5 - Answers and Results
+-------------------------------------------------
+
+I will copy/paste my print statements here
+
+----------------------part 1)----------------------------
+
+Running numerical algorithm
+Converged after 9776 iterations
+
+We see the charge density is just a circle on the edge of the wire.
+Indeed, in a conductor, no charge should remain inside and it should go 
+on the edge.
+
+We get a charge per unit length of  0.00010724119433769657
+Keep in mind that this does not take epsilon0 into account.
+
+---------------------part 2)-----------------------------
+
+Running numerical algorithm
+Converged after 75 iterations
+To obtain a precision of 0.01, we only needed 75 steps
+whereas it took 9776 by the dumb method. This is a big win.
+
+-------------------part 3)------------------------------
+
+loop for resolution n =  100
+Converged after 35 iterations
+
+loop for resolution n =  200
+Converged after 1 iterations
+
+loop for resolution n =  300
+Converged after 1 iterations
+
+loop for resolution n =  400
+Converged after 1 iterations
+
+loop for resolution n =  500
+Converged after 1 iterations
+
+We are done! It took a total of  38  steps.
+
+Again, using this method of combining conjugate gradient with
+a changing resolution, we use roughly half the steps needed for part 2.
+Although, as we get to bigger grids, the interpolation becomes slower.
+
+-----------------part 4)--------------------------------
+
+loop for resolution n =  100
+Converged after 35 iterations
+
+loop for resolution n =  200
+Converged after 1 iterations
+
+loop for resolution n =  300
+Converged after 1 iterations
+
+loop for resolution n =  400
+Converged after 1 iterations
+
+loop for resolution n =  500
+Converged after 1 iterations
+
+We are done!
+
+The Efield is greater around the bump than at any place around the wire.
+
+-----------------part 5)----------------------------------
+
+Solving Diffusion Equation
+Done!
+
+When we solve this problem, we have to set and define a number of things:
+
+- the size and time range
+- the size of timesteps and sizesteps (grid size)- the final temperature reached by the wall
+- the diffusion constant k which determines the rate of diffusion,
+  in fact, choosing too big a k ends up in the solution diverging.
+

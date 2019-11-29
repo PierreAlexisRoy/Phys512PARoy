@@ -3,7 +3,7 @@ Pierre-Alexis Roy
 Phys512 - Problem Set 5 - Answers and Results
 -------------------------------------------------
 
-I will copy/paste my print statements here
+I will copy/paste my print statements here and add some answers to questions
 
 ----------------------part 1)----------------------------
 
@@ -16,6 +16,10 @@ on the edge.
 
 We get a charge per unit length of  0.00010724119433769657
 Keep in mind that this does not take epsilon0 into account.
+
+We can see on the plots that indeed, our numerical potential resembles
+the theoretical one. We can also note that in both case, it is reliable 
+on a circle shape since it is a radial potential. 
 
 ---------------------part 2)-----------------------------
 

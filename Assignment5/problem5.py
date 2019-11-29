@@ -50,7 +50,7 @@ def diffusion_eq(dt,dx,t_end,x_end,k,T_end):
         for ii in range(1,len(x)-1):
             # impose the time increasing heating of the left side
             T[i,0] = t[i]*T_end
-            # solve diffusion eq.
+            # solve diffusion eq. with forward euler
             T[i+1,ii] = T[i,ii] + s*(T[i,ii-1] - 2*T[i,ii] + T[i,ii+1]) 
     return x,T
 

@@ -1,0 +1,42 @@
+Pierre-Alexis Roy
+260775494
+Phys 512 - Nbody Simulation
+
+Here I present some analysis and discussions to the different part of the code
+
+------------------- Part 1) ---------------------------------
+
+This part shows a single particle in our space. Indeed, 
+the energy and its position is constant in time. The particle 
+remains motionless. 
+
+------------------ Part 2) ---------------------------------
+
+In this part, the code initializes 2 particles orbiting in the
+center. We see they stay in orbit together and the energy has no clear
+trend, it stays relatively constant and/or oscillates. 
+
+------------------ Part 3) ---------------------------------
+
+In this part, we initialize 100 000 particles randomly distributed 
+on a space with periodic boundary conditions. This results in an isotropic universe. 
+We see at the begining, random fluctuations create little clusters of particles, which
+will in turn attract each other until it creates a big unique 'blob' of particles. 
+The energy is stable up to 4 decimals and oscillates. 
+
+----------------- Part 3b) --------------------------------
+
+In this part, we initiate 100 000 randomly distributed particles in a space
+where the boundary conditions are not periodic. Hence, there is no potential felt 
+outside of the boundaries. This results in the particles clustering in small chunks, 
+as well as being attracted towards the middle since no potential attracts them towards
+the outside. This results in all the particles collapsing in the center of our universe. 
+It is kind of like a Big Crunch. 
+
+I also used a different softening in this part. Using a smaller softening
+results in a larger number of smaller little clusters at the begining. 
+
+Again, the energy seems rather well conserved. 
+
+---------------- Part 4) ------------------------------------
+ 

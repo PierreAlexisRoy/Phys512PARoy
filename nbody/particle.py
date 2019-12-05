@@ -82,9 +82,6 @@ class particles():
             # get the masses for the particles
             self.masses(m)
 
-        # define our grid
-        #self.grid()
-
         # get green's function which does not change throughout the problem
         self.greens_function()
 
@@ -174,14 +171,6 @@ class particles():
             rsqr = (self.x[i] - n/2)**2 + (self.y[i] - n/2)**2
             r = np.sqrt(rsqr)
             self.m[i] = m * r**(-3)
-    #-----------------------------------------------------------------------------------
-
-    # def grid(self):
-    #     ''' 
-    #     create a grid on which we will "put" our particles
-
-    #     '''
-    #     self.grid = np.zeros([self.initial['grid_size'], self.initial['grid_size']])
 
     #---------------------------------------------------------------------------------
     def particle_mesh(self):
@@ -243,21 +232,13 @@ class particles():
         if n%2==0: # if we have an even grid size
             # flip the first bottom corner and flip/paste it to the other corner
             grid_green[n//2:, :n//2] = np.flip(grid_green[:n//2, :n//2], axis=0)
-            # flip and maste it to the otehr half
+            # flip and paste it to the other half
             grid_green[:, n//2:] = np.flip(grid_green[:, :n//2], axis=1)
 
-            # grid_green[n//2:, n//2:] = np.flip(grid_green[:n//2, :n//2])
-            # grid_green[:n//2, n//2:] = np.flip(grid_green[:n//2, :n//2], axis=1)
 
         else:# if we have an odd grid size
-            # flip the first bottom corner and flip/paste it to the other corner
-            grid_green[n//2:, :n//2+1] = np.flip(grid_green[:n//2+1, :n//2+1], axis=0)
-            # flip and maste it to the otehr half
-            grid_green[:, n//2:] = np.flip(grid_green[:, :n//2+1], axis=1)
-
-            # grid_green[n//2:, n//2:] = np.flip(grid_green[:n//2+1, :n//2+1])
-            # grid_green[:n//2+1, n//2:] = np.flip(grid_green[:n//2+1, :n//2+1], axis=1)
-
+            print('Use an even grid size! -> Exiting ')
+            exit(1)
 
         # since we only need to compute it once, we put this in our init and store it
         # in self
@@ -280,7 +261,7 @@ class particles():
             phi = 0.5 * (np.roll(phi, 1, axis=1) + phi)
             phi = 0.5 * (np.roll(phi, 1, axis=0) + phi)
 
-            # but we set potential on the boundary to 0 so our pde
+            # but we set potential on the boundary to 0 so our PDE
             # is non-periodic at the boundaries
             phi[:, 0]   = 0
             phi[:, -1]  = 0
@@ -349,15 +330,3 @@ class particles():
         self.particle_mesh()
     #----------------------------------------------------------------------------
     
-
-
-
-
-# if __name__=='__main__':
-#     #plt.ion()
-#     n=1000
-#     oversamp=5
-#     part=particles(m=1.0/n,N_particles=n,dt=0.1/oversamp)
-#     plt.plot(part.x,part.y,'*')
-#     plt.show()
-

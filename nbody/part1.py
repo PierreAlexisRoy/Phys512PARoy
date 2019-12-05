@@ -23,6 +23,32 @@ if __name__=='__main__':
     # initialize the system
     part=particles(m=1.0,N_particles=n, grid_size=grid_size,v_init=vi, soft = soft, dt=1)
 
+
+    # # to create an animation -----------------------------------------------------------
+
+    # # we will create an animation to present the results
+    # # create a figure scheme
+    # fig = plt.figure()
+    # ax = fig.add_subplot(111, autoscale_on=False, xlim=(0,grid_size), ylim=(0,grid_size))
+    # ax.set_title('One particle')
+
+    # # initialize our list
+    # ptcl, = ax.plot([],[],'*')
+
+    # def evovle_frame(i):
+    #     global part, ax, fig
+    #     # evolve
+    #     part.evolve()
+    #     # plot position
+    #     ptcl.set_data(part.x, part.y)
+    #     return ptcl,
+
+    # ani = animation.FuncAnimation(fig, evovle_frame, frames=50)
+    # ani.save('part1.gif', writer='imagemagick')
+
+
+    #to plot the results in real time ----------------------------------------------
+
     # evolve it in time
     for i in range(100):
     	part.evolve()
@@ -30,5 +56,4 @@ if __name__=='__main__':
     	# plt.plot(part.x, part.y, '*')
     	# plt.ylim((0,grid_size))
     	# plt.xlim((0,grid_size))
-    	plt.pcolormesh(part.grid)
     	plt.pause(1e-1)

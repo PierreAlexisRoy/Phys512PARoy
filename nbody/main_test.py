@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 from particle import *
 
 #plt.ion()
+# This is a file used to perform some testing of my class
 
 if __name__=='__main__':
     #plt.ion()

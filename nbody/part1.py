@@ -4,6 +4,7 @@
 #----------------------------
 import numpy as np 
 from matplotlib import pyplot as plt
+import matplotlib.animation as animation
 from particle import *
 
 # Here, we only consider one particle to verify that it remains still in the grid
@@ -23,7 +24,7 @@ if __name__=='__main__':
     part=particles(m=1.0,N_particles=n, grid_size=grid_size,v_init=vi, soft = soft, dt=1)
 
     # evolve it in time
-    for i in range(200):
+    for i in range(100):
     	part.evolve()
     	plt.clf()
     	# plt.plot(part.x, part.y, '*')

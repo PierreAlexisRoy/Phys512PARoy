@@ -158,19 +158,30 @@ class particles():
     #-----------------------------------------------------------------------------------
     def masses_cosmo(self,m):
         '''
-        Get the masses for the particles which will vary as r^-3 from the center
+        Get the masses for the particles which will vary as k^-3 
         in the case setup == 'universe'
         '''
         # initialize a mass array
         n = self.initial['grid_size']
         self.m = m * np.ones(self.initial['N'])
 
-        # for each particle, compute radius from center and give a mass
-        # accordingly
-        for i in range(len(self.x)):
-            rsqr = (self.x[i] - n/2)**2 + (self.y[i] - n/2)**2
-            r = np.sqrt(rsqr)
-            self.m[i] = m * r**(-3)
+
+        # with fftshift, we get k in fourier space for each particle and then
+        # associate the mass of m * k^(-3) to it
+        ksqr = (np.real(np.fft.fftshift(self.x)))**2 + np.real((np.fft.fftshift(self.y)))**2
+        k = np.sqrt(ksqr)
+        self.m = m * k**(-3)
+
+
+        # # If you want to do the same with the radius from the center in real space
+        # # use the the following lines
+
+        # # for each particle, compute radius from center and give a mass
+        # # accordingly
+        # for i in range(len(self.x)):
+        #     rsqr = (self.x[i] - n/2)**2 + (self.y[i] - n/2)**2
+        #     r = np.sqrt(rsqr)
+        #     self.m[i] = m * r**(-3)
 
     #---------------------------------------------------------------------------------
     def particle_mesh(self):
@@ -216,8 +227,6 @@ class particles():
                 # if the distance is zero, we use the softening to avoid blow-up
                 if r_squared < soft:
                     r_squared = soft
-                    #grid_green[x,y] = soft
-
                 
                 # add the softening for continuity  
                 r_squared += soft

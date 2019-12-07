@@ -8,13 +8,13 @@ Here I present some analysis and discussions to the different part of the code
 
 This part shows a single particle in our space. Indeed, 
 the energy and its position is constant in time. The particle 
-remains motionless. 
+remains motionless as it should. 
 
 ------------------ Part 2) ---------------------------------
 
 In this part, the code initializes 2 particles orbiting in the
 center. We see they stay in orbit together and the energy has no clear
-trend, it stays relatively constant and/or oscillates. 
+trend, it stays relatively constant and/or oscillates over time. 
 
 ------------------ Part 3) ---------------------------------
 
@@ -24,19 +24,37 @@ We see at the begining, random fluctuations create little clusters of particles,
 will in turn attract each other until it creates a big unique 'blob' of particles. 
 The energy is stable up to 4 decimals and oscillates. 
 
+Note : to get a more stable simulation, one can just lower the time step 
+       dt. It will just take longer to run and yield bigger files. 
+
 ----------------- Part 3b) --------------------------------
 
 In this part, we initiate 100 000 randomly distributed particles in a space
 where the boundary conditions are not periodic. Hence, there is no potential felt 
 outside of the boundaries. This results in the particles clustering in small chunks, 
 as well as being attracted towards the middle since no potential attracts them towards
-the outside. This results in all the particles collapsing in the center of our universe. 
-It is kind of like a Big Crunch. 
+the outside. Thus, this universe scenario is no longer isotropic. This results in all 
+the particles collapsing in the center of our universe. It is kind of like a Big Crunch! 
 
-I also used a different softening in this part. Using a smaller softening
-results in a larger number of smaller little clusters at the begining. 
+I also used a different softening in this part. It is interesting to see 
+that using a smaller softening results in a larger number of smaller little
+clusters forming. 
 
-Again, the energy seems rather well conserved. 
+Again, the energy seems rather well conserved. (or maybe has a small increase over 
+time but it is not significant compared to the energy value).
+
+Note : again, we can use a higher dt to get a more stable event when it collapses. 
 
 ---------------- Part 4) ------------------------------------
  
+Here, we add mass fluctuations to our periodic BC case, so all particles don't
+have the same mass anymore. This results in regions of higher densiy attracting
+the surrounding particles. So the clusters appear to be less uniform than in part 3 
+and in between clusters, some low mass particles are not interacting as much (because of their low mass). 
+It really seems like some big gas cloud or interstellar medium in which some
+density fluctuations create clusters/stars which are rather stable and 'sink' the matter
+in the surrounding area.
+
+In order to see all particles of all masses, the frames are shown in log scale. 
+
+Again, the energy seems to be well behaved. 

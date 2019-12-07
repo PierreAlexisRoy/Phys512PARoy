@@ -7,14 +7,14 @@ For this project, the program running the Nbody simulation is
 found in the file particle.py and is define as the class 'particle'. 
 Comments in the code explain the features and how the code works. 
 
-Then, for each part, a 'part{i}.py' is used to perform the different tasks asked
+Then, for each part, a file 'part{i}.py' is used to perform the different tasks asked
 in the problem set. These are : 
 
 part1.py  -- single particle
-part2.-y  -- orbit with 2 particles
+part2.py  -- orbit with 2 particles
 part3.py  -- lots of particles , periodic BC
 part3b.py -- lots of particles, non periodic BC
-part4.py  -- universe 
+part4.py  -- universe mass fluctuations
 
 
 Then, in each case, the results are shown in files starting by the associated part name

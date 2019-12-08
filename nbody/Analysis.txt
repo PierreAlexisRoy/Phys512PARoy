@@ -3,6 +3,8 @@ Pierre-Alexis Roy
 Phys 512 - Nbody Simulation
 
 Here I present some analysis and discussions to the different part of the code
+All simulations were done with initial conditions that made the simulation nice 
+(like for the orbit to stay stable for a good amount of time, etc.).
 
 ------------------- Part 1) ---------------------------------
 
